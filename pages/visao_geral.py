@@ -68,6 +68,6 @@ top5_produtos= dados_vendas.groupby('Produto')['Vendas'].sum().nlargest(5).reset
 fig = px.bar(top5_produtos, x='Produto', y='Vendas',
              title='Top 5 produtos',
              color='Vendas',
-             color_continuous_scale='sunset')
+             color_continuous_scale='purples')
 
 st.plotly_chart(fig, width='stretch')

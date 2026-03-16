@@ -12,24 +12,23 @@ visao_geral= st.Page('./pages/visao_geral.py',
                      icon='🏠',
                      default=True)
 
-#analise_vendas= st.Page('./pages/analise_vendas.py',\
-#                        title='Analise de Vendas',
-#                        icon=':moneybag:')
+analise_vendas= st.Page('./pages/analise_vendas.py',\
+                       title='Analise de Vendas',
+                       icon='💰')
 
 #analise_produtos= st.Page('./pages/analise_produtos.py',
 #                          title='Produtos',
-#                          icon=':package:')
+#                         icon=':package:')
 
 #sobre= st.Page('./pages/sobre.py',
-#               title='Sobre',
+#              title='Sobre',
 #               icon= ':information_source:')
 
 # CONFIGURANDO A NAVEGACAO 
 
 pg = st.navigation(
-    [visao_geral
-     #'Analises': [analise_vendas, analise_produtos],
-     #'Sobre': sobre
+    [visao_geral, analise_vendas
+     
     ]
 )
 
