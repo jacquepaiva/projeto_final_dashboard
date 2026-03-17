@@ -45,17 +45,15 @@ if len(data_range) ==2:
      data_inicio = pd.to_datetime(data_range[0])
      data_fim = pd.to_datetime(data_range[1])
 else:
-     st.warning("Selecione uma data inicial e uma final no filtro")
+     st.warning("Selecione uma data inicial de um mes e uma final de outro mes no filtro")
      st.stop()
 
 #Aplicando os filtros selecionados pelo usuario para criar um dataframe filtrado 
 dados_filtrados= dados_vendas[
     (dados_vendas["Regiao"].isin(regioes))&
     (dados_vendas["Categoria"].isin(categorias)) &
-        (dados_vendas["Data"].between
-    (           pd.to_datetime(data_range[0]), 
-                pd.to_datetime(data_range[1])))
-]
+        (dados_vendas["Data"].between(data_inicio, data_fim))]
+
 #Metricas filtradas
 col1, col2, col3= st.columns(3)
 col1.metric("Receita Filtrada", f"R$ {dados_filtrados['Vendas'].sum():,.0f}")
@@ -153,10 +151,10 @@ csv = convert_for_download(df)
 with st.expander(":bar_chart: Dados detalhados"):
     st.write(dados_filtrados)
     st.download_button(
-    label="Download CSV",
+    label="Baixar dados filtrados",
     data=csv,
     file_name="analise_vendas.csv",
     mime="text/csv",
     icon=":material/download:",
 )
-    
+   

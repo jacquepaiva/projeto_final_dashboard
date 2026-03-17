@@ -16,9 +16,9 @@ analise_vendas= st.Page('./pages/analise_vendas.py',\
                        title='Analise de Vendas',
                        icon='💰')
 
-#analise_produtos= st.Page('./pages/analise_produtos.py',
-#                          title='Produtos',
-#                         icon=':package:')
+analise_produtos= st.Page('./pages/analise_produtos.py',
+                          title='Produtos',
+                         icon='📦')
 
 #sobre= st.Page('./pages/sobre.py',
 #              title='Sobre',
@@ -27,9 +27,7 @@ analise_vendas= st.Page('./pages/analise_vendas.py',\
 # CONFIGURANDO A NAVEGACAO 
 
 pg = st.navigation(
-    [visao_geral, analise_vendas
-     
-    ]
+    [visao_geral, analise_vendas, analise_produtos]
 )
 
 pg.run()
