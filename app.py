@@ -20,6 +20,13 @@ analise_produtos= st.Page('./pages/analise_produtos.py',
                           title='Produtos',
                          icon='📦')
 
+analise_produtos_professor= st.Page('./pages/analise_produtos_professor.py',
+                          title='Produtos - professor',
+                         icon='📦')
+
+
+
+
 #sobre= st.Page('./pages/sobre.py',
 #              title='Sobre',
 #               icon= ':information_source:')
@@ -27,7 +34,10 @@ analise_produtos= st.Page('./pages/analise_produtos.py',
 # CONFIGURANDO A NAVEGACAO 
 
 pg = st.navigation(
-    [visao_geral, analise_vendas, analise_produtos]
+    [visao_geral, 
+     analise_vendas, 
+     analise_produtos, 
+     analise_produtos_professor]
 )
 
 pg.run()

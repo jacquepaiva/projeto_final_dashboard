@@ -34,9 +34,10 @@ col1.metric("Receita", f"R$ {dados_filtrados['Vendas'].sum():,.2f}")
 col2.metric("Lucro", f"R$ {dados_filtrados['Lucro'].sum():,.2f}")
 col3.metric("Quantidade",  int(dados_filtrados['Quantidade'].sum()))
 
+
 media_custo= 'NA'
 if dados_filtrados['Vendas'].sum() > 0:
-    media_custo= (dados_filtrados['Custo'].mean())
+   media_custo= (dados_filtrados['Vendas'].sum() / dados_filtrados['Quantidade'].sum())
                   
 col4.metric("Preco medio", f"R$ {media_custo:,.2f}")
 
