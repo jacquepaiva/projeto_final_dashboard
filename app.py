@@ -27,9 +27,9 @@ analise_produtos_professor= st.Page('./pages/analise_produtos_professor.py',
 
 
 
-#sobre= st.Page('./pages/sobre.py',
-#              title='Sobre',
-#               icon= ':information_source:')
+sobre= st.Page('./pages/sobre.py',
+              title='Sobre',
+              icon= 'ℹ️')
 
 # CONFIGURANDO A NAVEGACAO 
 
@@ -37,7 +37,8 @@ pg = st.navigation(
     [visao_geral, 
      analise_vendas, 
      analise_produtos, 
-     analise_produtos_professor]
+     analise_produtos_professor,
+     sobre]
 )
 
 pg.run()
